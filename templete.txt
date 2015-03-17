@@ -1,0 +1,28 @@
+<?php
+
+class {
+	
+
+	public static function ($host,$user,$pass,$schema_name) {
+		//pdoでDBに接続
+		try {
+			$pdo = new PDO('mysql:host='. $host. ';dbname='.$schema_name, $user, $pass);
+		} catch (Exception $e) {
+			echo "DBに接続できませんでした";
+			exit(1);
+		}
+		
+		
+		//初期化SQL文の入力
+		//テーブルを再作成するSQL
+		$csql = <<<EOF
+
+EOF;
+		
+		//echo "in create function";
+		
+		//SQLを実行する
+		$pdo->exec($csql);
+		//echo "in create function";
+	}
+}
